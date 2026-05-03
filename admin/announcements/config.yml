@@ -1,0 +1,154 @@
+backend:
+  name: github
+  repo: OpenHub-Store/github-store-backend
+  branch: main
+  base_url: https://github-store-cms-oauth.rainxchzed.workers.dev
+
+publish_mode: editorial_workflow
+
+site_url: https://github-store.org
+display_url: https://github-store.org
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: announcements
+    label: Announcements
+    label_singular: Announcement
+    folder: src/main/resources/announcements
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: id
+    slug: "{{fields.id}}"
+    summary: "[{{severity}}] {{title}} — {{category}}, pub {{publishedAt | date('YYYY-MM-DD')}}"
+    sortable_fields: ["publishedAt", "expiresAt", "severity", "category", "id"]
+    fields:
+      - name: id
+        label: ID
+        widget: string
+        hint: "Lowercase kebab-case, ≤64 chars. Filename = <id>.json. Example: 2026-05-privacy-policy-update"
+        pattern: ['^[a-z0-9-]{1,64}$', 'Lowercase letters, digits, hyphens only; ≤64 chars']
+
+      - name: publishedAt
+        label: Published at (UTC)
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ss[Z]"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ss"
+        picker_utc: true
+
+      - name: expiresAt
+        label: Expires at (UTC)
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ss[Z]"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ss"
+        picker_utc: true
+        required: false
+        hint: "Strongly recommended for time-bound items. Suggest publishedAt + 90 days. Leave blank only for genuinely evergreen news."
+
+      - name: severity
+        label: Severity
+        widget: select
+        default: INFO
+        options:
+          - { label: "INFO (default)", value: INFO }
+          - { label: IMPORTANT, value: IMPORTANT }
+          - { label: CRITICAL, value: CRITICAL }
+        hint: "SECURITY category requires IMPORTANT or CRITICAL — backend validator rejects INFO."
+
+      - name: category
+        label: Category
+        widget: select
+        default: NEWS
+        options:
+          - NEWS
+          - PRIVACY
+          - SURVEY
+          - SECURITY
+          - STATUS
+        hint: "PRIVACY auto-requires acknowledgment. SECURITY blocks INFO severity."
+
+      - name: title
+        label: Title
+        widget: string
+        pattern: ['^.{1,80}$', '1–80 chars']
+
+      - name: body
+        label: Body
+        widget: text
+        hint: "Plain text, 50–600 chars. Newlines preserved. Markdown is NOT rendered by the client."
+        pattern: ['^[\s\S]{50,600}$', '50–600 chars']
+
+      - name: ctaUrl
+        label: CTA URL
+        widget: string
+        required: false
+        pattern: ['^https://.+', 'Must start with https://']
+
+      - name: ctaLabel
+        label: CTA Label
+        widget: string
+        required: false
+        pattern: ['^.{0,30}$', '≤30 chars']
+        hint: "Only meaningful if CTA URL is set. Pair: both filled or both empty."
+
+      - name: dismissible
+        label: Dismissible
+        widget: boolean
+        default: true
+        hint: "Auto-locked to false at runtime when requiresAcknowledgment=true."
+
+      - name: requiresAcknowledgment
+        label: Requires acknowledgment
+        widget: boolean
+        default: false
+        hint: "Privacy/ToS notices: must be true. Backend forces dismissible=false when this is on."
+
+      - name: iconHint
+        label: Icon hint
+        widget: select
+        required: false
+        default: ""
+        options:
+          - { label: "(none)", value: "" }
+          - { label: INFO, value: INFO }
+          - { label: WARNING, value: WARNING }
+          - { label: SECURITY, value: SECURITY }
+          - { label: CELEBRATION, value: CELEBRATION }
+          - { label: CHANGE, value: CHANGE }
+
+      - name: minVersionCode
+        label: Min version code
+        widget: number
+        required: false
+        value_type: int
+        min: 0
+
+      - name: maxVersionCode
+        label: Max version code
+        widget: number
+        required: false
+        value_type: int
+        min: 0
+
+      - name: platforms
+        label: Platforms (empty = both)
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - ANDROID
+          - DESKTOP
+
+      - name: installerTypes
+        label: Installer types (empty = both)
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - DEFAULT
+          - SHIZUKU
