@@ -87,6 +87,79 @@ homepage: true
     </div>
 </div>
 
+<!-- ═══ Comparison ═══ -->
+<section class="comparison container" id="comparison" aria-labelledby="comparison-heading">
+    <div class="section-header reveal">
+        <p class="section-header__overline">Comparison</p>
+        <h2 class="section-header__title" id="comparison-heading">How GitHub Store compares</h2>
+        <p class="section-header__subtitle">Looking for an <strong>F-Droid alternative</strong>, <strong>Obtainium alternative</strong>, or a way to install Android apps directly from GitHub? GitHub Store turns any GitHub release into a one-tap install across all your devices.</p>
+    </div>
+    <div class="comparison__scroller" role="region" aria-label="Feature comparison table">
+        <table class="comparison__table">
+            <thead>
+                <tr>
+                    <th scope="col">Feature</th>
+                    <th scope="col" class="comparison__own">GitHub Store</th>
+                    <th scope="col">Obtainium</th>
+                    <th scope="col">F-Droid</th>
+                    <th scope="col">Aurora Store</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Open source</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Apache-2.0</td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cross-platform (Desktop too)</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Win, macOS, Linux, Android</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
+                </tr>
+                <tr>
+                    <th scope="row">Discover new apps</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Trending, popular, hot</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Manual repo URL</td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span> Curated</td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span> Play Store mirror</td>
+                </tr>
+                <tr>
+                    <th scope="row">Silent install (Shizuku/Dhizuku)</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span></td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span> Shizuku</td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
+                    <td><span class="cmp-no" aria-label="no">✕</span></td>
+                </tr>
+                <tr>
+                    <th scope="row">China mirror system</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Multi-source race + SHA-256 verify</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span></td>
+                    <td><span class="cmp-partial" aria-label="partial">~</span> Limited</td>
+                    <td><span class="cmp-partial" aria-label="partial">~</span> Limited</td>
+                </tr>
+                <tr>
+                    <th scope="row">Direct GitHub releases</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Native</td>
+                    <td><span class="cmp-yes" aria-label="yes">✓</span> Native</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Curated only</td>
+                    <td><span class="cmp-no" aria-label="no">✕</span> Play only</td>
+                </tr>
+                <tr>
+                    <th scope="row">Library import from Obtainium</th>
+                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span></td>
+                    <td><span class="cmp-na" aria-label="not applicable">—</span></td>
+                    <td><span class="cmp-no" aria-label="no">✕</span></td>
+                    <td><span class="cmp-no" aria-label="no">✕</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 <!-- ═══ FAQ ═══ -->
 <section class="faq container" id="faq" aria-labelledby="faq-heading">
     <div class="section-header reveal">
@@ -225,6 +298,61 @@ homepage: true
                 </ul>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ═══ About ═══ -->
+<section class="about container" id="about" aria-labelledby="about-heading">
+    <div class="section-header reveal">
+        <p class="section-header__overline">About</p>
+        <h2 class="section-header__title" id="about-heading">About GitHub Store</h2>
+    </div>
+    <div class="about__grid">
+        <div class="about__card reveal">
+            <p class="about__lede">A one-developer indie project building a cross-platform, open-source app store for GitHub releases — Android, Windows, macOS, Linux. Apache-2.0. No tracking, no account, no ads.</p>
+        </div>
+        <ul class="about__facts reveal-stagger">
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Created</span>
+                <span class="about__fact__value">November 2025</span>
+                <span class="about__fact__sub">by Usmon Narzullayev (17, Uzbekistan)</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">License</span>
+                <span class="about__fact__value">Apache-2.0</span>
+                <span class="about__fact__sub">App, source, and backend</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Tech stack</span>
+                <span class="about__fact__value">Kotlin Multiplatform</span>
+                <span class="about__fact__sub">+ Compose Multiplatform</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Platforms</span>
+                <span class="about__fact__value">4</span>
+                <span class="about__fact__sub">Android, Windows, macOS, Linux</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Updates served</span>
+                <span class="about__fact__value">260,000+</span>
+                <span class="about__fact__sub">since launch</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">GitHub stars</span>
+                <span class="about__fact__value">12,710</span>
+                <span class="about__fact__sub">at <a href="https://github.com/OpenHub-Store/GitHub-Store" target="_blank" rel="noopener">OpenHub-Store/GitHub-Store</a></span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Languages</span>
+                <span class="about__fact__value">13</span>
+                <span class="about__fact__sub">en, ar, bn, zh-Hans, es, fr, hi, it, ja, ko, pl, ru, tr</span>
+            </li>
+            <li class="about__fact reveal">
+                <span class="about__fact__label">Backend</span>
+                <span class="about__fact__value">Open source</span>
+                <span class="about__fact__sub">Apache-2.0 · self-hostable</span>
+            </li>
+        </ul>
     </div>
 </section>
 
