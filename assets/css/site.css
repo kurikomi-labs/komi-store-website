@@ -633,6 +633,91 @@ body::before {
 .platform-chip svg { width: 18px; height: 18px; opacity: 0.75; }
 
 /* ══════════════════════════════════════════════════════════════
+   FAQ
+   ══════════════════════════════════════════════════════════════ */
+.faq {
+    padding: 80px 24px;
+    max-width: 880px;
+}
+
+.faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.faq__item {
+    background: var(--md-surface-container-low);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--shape-lg, 16px);
+    overflow: hidden;
+    transition: border-color 200ms var(--motion-standard);
+}
+
+.faq__item[open] {
+    border-color: var(--md-primary);
+}
+
+.faq__item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq__item summary h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--md-on-surface);
+    line-height: 1.4;
+    display: inline;
+}
+
+.faq__chev {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--md-primary);
+    background: var(--md-primary-container, rgba(0, 0, 0, 0.04));
+    transition: transform 200ms var(--motion-standard);
+}
+
+.faq__item[open] .faq__chev {
+    transform: rotate(45deg);
+}
+
+.faq__item p {
+    margin: 0;
+    padding: 0 24px 24px;
+    color: var(--md-on-surface-variant);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+@media (max-width: 640px) {
+    .faq { padding: 56px 16px; }
+    .faq__item summary { padding: 16px 18px; }
+    .faq__item summary h3 { font-size: 1rem; }
+    .faq__item p { padding: 0 18px 20px; font-size: 0.9rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    FEATURES (3 cards)
    ══════════════════════════════════════════════════════════════ */
 .features { background: var(--md-surface); }
