@@ -47,5 +47,23 @@
     /* ─── Year Stamp ─── */
     const yEl = document.getElementById('year');
     if (yEl) yEl.textContent = new Date().getFullYear();
+
+    /* ─── Scroll Reveal (site-wide) ─── */
+    const reveals = document.querySelectorAll('.reveal, .reveal-scale');
+    if (reveals.length > 0) {
+        if (!('IntersectionObserver' in window)) {
+            reveals.forEach(el => el.classList.add('visible'));
+        } else {
+            const revealObs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        revealObs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            reveals.forEach(el => revealObs.observe(el));
+        }
+    }
 })();
 </script>

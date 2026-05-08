@@ -383,12 +383,6 @@ homepage: true
 
 <script>
 (() => {
-    /* ─── Scroll Reveal ─── */
-    const revealObs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => revealObs.observe(el));
-
     /* ─── Steps Timeline ─── */
     const stepsC = document.getElementById('stepsContainer');
     const stepsLine = document.getElementById('stepsLine');
