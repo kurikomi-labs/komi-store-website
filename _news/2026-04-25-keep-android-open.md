@@ -7,6 +7,8 @@ tags:
   - policy
   - android
 draft: false
+redirect_from:
+  - /news/keep-android-open/
 ---
 GitHub Store stands with the open letter.
 

@@ -1,16 +1,18 @@
 ---
 layout: default
-title: News
+title: Blog
 description: Founder essays, comparison guides, tutorials, and engineering deep-dives from the makers of GitHub Store.
-keywords: github store news, github store blog, github store updates, kotlin multiplatform blog, app store engineering
-permalink: /news/
+keywords: github store blog, github store news, github store updates, kotlin multiplatform blog, app store engineering, indie open source
+permalink: /blog/
+redirect_from:
+  - /news/
 ---
 
 <section class="news-list container">
     <header class="news-list__header">
-        <h1>News</h1>
-        <p class="news-list__sub">Updates, position posts, and release notes.</p>
-        <a href="/news/feed.xml" class="news-list__rss">RSS</a>
+        <h1>Blog</h1>
+        <p class="news-list__sub">Founder essays, position posts, comparison guides, and release notes.</p>
+        <a href="/blog/feed.xml" class="news-list__rss">RSS</a>
     </header>
 
     <ul class="news-list__items">

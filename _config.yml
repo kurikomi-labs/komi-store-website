@@ -17,11 +17,11 @@ include:
   - .well-known
   - admin
 
-# News collection
+# Blog collection (folder name `_news` kept for backwards-compat with Decap CMS)
 collections:
   news:
     output: true
-    permalink: /news/:slug/
+    permalink: /blog/:slug/
     sort_by: date
 
 defaults:
@@ -40,6 +40,7 @@ permalink: pretty
 
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Sitemap exclusions
 sitemap:

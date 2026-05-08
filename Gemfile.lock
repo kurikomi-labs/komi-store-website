@@ -299,6 +299,7 @@ DEPENDENCIES
   bigdecimal
   csv
   github-pages
+  jekyll-redirect-from
   jekyll-sitemap
   logger
 

@@ -21,7 +21,7 @@ collections:
     format: frontmatter
     sortable_fields: ["date", "title"]
     summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
-    preview_path: "news/{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
     fields:
       - { name: title, label: Title, widget: string, hint: "Used as page title and in the news listing." }
       - { name: description, label: Lede, widget: string, required: false, hint: "One-sentence summary shown under the title and in feeds." }
