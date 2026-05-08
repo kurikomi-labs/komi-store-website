@@ -1,7 +1,8 @@
 ---
 layout: default
 title: News
-description: Updates, position posts, and release notes from GitHub Store.
+description: Founder essays, comparison guides, tutorials, and engineering deep-dives from the makers of GitHub Store.
+keywords: github store news, github store blog, github store updates, kotlin multiplatform blog, app store engineering
 permalink: /news/
 ---
 
