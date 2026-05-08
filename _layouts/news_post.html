@@ -22,6 +22,9 @@ layout: default
         {{ content }}
     </div>
     <footer class="news-article__footer">
+        <div class="news-article__newsletter">
+            {% include newsletter.html id="post-footer" title="Get the next post" subtitle="One email every 2 weeks. No spam." %}
+        </div>
         <a href="/blog/" class="news-article__back">← All posts</a>
     </footer>
 </article>

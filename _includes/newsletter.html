@@ -1,0 +1,37 @@
+{%- comment -%}
+Newsletter signup form (Buttondown).
+
+Usage:
+  {% include newsletter.html id="home" %}
+  {% include newsletter.html id="blog" title="Subscribe" subtitle="One essay every 2 weeks. No spam." %}
+
+Knobs:
+  id        unique slug for this instance (collides on the same page if two embeds reuse the same id)
+  title     <h3> heading. Default: "Get the next post"
+  subtitle  paragraph under the heading. Default: short pitch.
+  variant   "compact" for inline footer use; otherwise card style
+  cta       button label. Default: "Subscribe"
+
+Renders nothing when site.buttondown_username is empty.
+{%- endcomment -%}
+
+{% if site.buttondown_username and site.buttondown_username != "" %}
+{%- assign nl_id = include.id | default: "default" -%}
+{%- assign nl_title = include.title | default: "Get the next post" -%}
+{%- assign nl_sub = include.subtitle | default: "Roughly one essay every 2 weeks. Founder notes, comparison guides, and major release breakdowns. No spam." -%}
+{%- assign nl_cta = include.cta | default: "Subscribe" -%}
+{%- assign nl_variant = include.variant | default: "card" -%}
+
+<form class="newsletter newsletter--{{ nl_variant }}" action="https://buttondown.com/api/emails/embed-subscribe/{{ site.buttondown_username }}" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/{{ site.buttondown_username }}', 'popupwindow');">
+    <div class="newsletter__head">
+        <h3 class="newsletter__title">{{ nl_title }}</h3>
+        <p class="newsletter__sub">{{ nl_sub }}</p>
+    </div>
+    <div class="newsletter__field">
+        <label for="bd-email-{{ nl_id }}" class="sr-only">Email address</label>
+        <input id="bd-email-{{ nl_id }}" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        <button type="submit">{{ nl_cta }}</button>
+    </div>
+    <p class="newsletter__legal">By subscribing you agree to receive newsletter emails. Unsubscribe any time. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+</form>
+{% endif %}
