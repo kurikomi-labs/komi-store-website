@@ -81,11 +81,21 @@ Front-matter knobs per page:
 <meta name="twitter:site" content="@{{ site.social.twitter }}">
 <meta name="twitter:creator" content="@{{ site.social.twitter }}">
 
-<!-- Fonts + CSS -->
+<!-- Resource hints -->
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+{%- if page.homepage %}
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/01.jpg" fetchpriority="high">
+{%- endif %}
+
+<!-- CSS (render-blocking, with build-version cache-bust) -->
+<link rel="stylesheet" href="/assets/css/site.css?v={{ site.github.build_revision | default: site.time | date: '%s' }}">
+
+<!-- Fonts (async, non-render-blocking, font-display:swap handles FOUT) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v={{ site.github.build_revision | default: site.time | date: '%s' }}">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"></noscript>
+
 <link rel="alternate" type="application/rss+xml" title="GitHub Store Blog" href="/blog/feed.xml">
 
 <!-- Organization (site-wide) -->
