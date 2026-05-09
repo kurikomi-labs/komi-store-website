@@ -11,9 +11,8 @@ author:
 social:
   twitter: rainxch_zed
 
-# Newsletter (Buttondown). Set to your Buttondown username to enable signup forms across the site.
-# Example: buttondown_username: githubstore
-buttondown_username: ""
+
+buttondown_username: "githubstore"
 
 logo: /android-chrome-512x512.png
 
