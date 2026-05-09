@@ -265,17 +265,22 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    border: none;
+    height: 48px;
+    padding: 0 24px;
+    border: 1.5px solid transparent;
     cursor: pointer;
     font-family: inherit;
     font-weight: 600;
     font-size: 0.9375rem;
     letter-spacing: 0.01em;
+    line-height: 1;
     text-decoration: none;
+    white-space: nowrap;
     border-radius: var(--shape-full);
     position: relative;
     overflow: hidden;
-    transition: all 300ms var(--motion-standard);
+    transition: background-color 200ms var(--motion-standard), border-color 200ms var(--motion-standard), box-shadow 200ms var(--motion-standard), transform 200ms var(--motion-standard);
+    box-sizing: border-box;
 }
 
 .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
@@ -287,38 +292,42 @@ body::before {
     border-radius: inherit;
     opacity: 0;
     transition: opacity 200ms;
+    pointer-events: none;
 }
 .btn:hover::before { opacity: 1; }
 
-.btn--filled {
+.btn--lg {
     height: 56px;
-    padding: 0 36px;
+    padding: 0 32px;
+    font-size: 1rem;
+}
+
+.btn--lg svg { width: 22px; height: 22px; }
+
+.btn--filled {
     background: var(--md-primary);
     color: var(--md-on-primary);
+    border-color: var(--md-primary);
     box-shadow: var(--elevation-2);
 }
 
 .btn--filled:hover { box-shadow: var(--elevation-3); transform: translateY(-2px); }
 .btn--filled:active { transform: translateY(0); }
 .btn--filled::before { background: rgba(255,255,255,0.1); }
-.btn--filled svg { width: 22px; height: 22px; }
 
 .btn--tonal {
-    height: 48px;
-    padding: 0 28px;
     background: var(--md-secondary-container);
     color: var(--md-on-secondary-container);
+    border-color: var(--md-secondary-container);
 }
 
 .btn--tonal:hover { box-shadow: var(--elevation-1); transform: translateY(-1px); }
 .btn--tonal::before { background: color-mix(in srgb, var(--md-on-secondary-container) 8%, transparent); }
 
 .btn--outlined {
-    height: 48px;
-    padding: 0 28px;
     background: transparent;
     color: var(--md-primary);
-    border: 1.5px solid var(--md-outline);
+    border-color: var(--md-outline);
 }
 
 .btn--outlined:hover {
@@ -2703,19 +2712,23 @@ body.has-announce {
     gap: 10px;
     margin-bottom: 12px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .newsletter__field input[type="email"] {
     flex: 1 1 240px;
     min-width: 0;
-    padding: 12px 16px;
-    font-size: 0.9375rem;
+    height: 48px;
+    padding: 0 18px;
+    font-size: 16px;
     font-family: inherit;
+    line-height: 1;
     color: var(--md-on-surface);
     background: var(--md-surface-container-lowest);
-    border: 1px solid var(--md-outline);
+    border: 1.5px solid var(--md-outline);
     border-radius: var(--shape-full);
     outline: none;
+    box-sizing: border-box;
     transition: border-color 200ms var(--motion-standard), box-shadow 200ms var(--motion-standard);
 }
 
@@ -2730,15 +2743,19 @@ body.has-announce {
 }
 
 .newsletter__field button {
-    padding: 12px 24px;
+    height: 48px;
+    padding: 0 26px;
     font-size: 0.9375rem;
     font-weight: 600;
     font-family: inherit;
+    line-height: 1;
+    white-space: nowrap;
     color: var(--md-on-primary);
     background: var(--md-primary);
-    border: 1px solid var(--md-primary);
+    border: 1.5px solid var(--md-primary);
     border-radius: var(--shape-full);
     cursor: pointer;
+    box-sizing: border-box;
     transition: background-color 200ms var(--motion-standard), transform 100ms var(--motion-standard);
 }
 
@@ -2776,5 +2793,86 @@ body.has-announce {
     .newsletter { padding: 26px 22px; }
     .newsletter-section { padding: 48px 16px; }
     .newsletter__field { flex-direction: column; gap: 12px; }
+    .newsletter__field input[type="email"],
     .newsletter__field button { width: 100%; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   GLOBAL MOBILE POLISH — overflow protection, tap targets
+   ══════════════════════════════════════════════════════════════ */
+
+/* Wrap long text safely; prevent horizontal overflow from URLs, hashes, etc. */
+h1, h2, h3, h4, h5, h6, p, li, dt, dd, summary, figcaption, blockquote {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Inline code can be long (commit hashes, package names) — let them break */
+:not(pre) > code {
+    overflow-wrap: anywhere;
+}
+
+/* Forms: block iOS zoom-on-focus, force base font-size 16px */
+input[type="email"],
+input[type="text"],
+input[type="search"],
+textarea,
+select {
+    font-size: 16px;
+}
+
+/* Tap target floor (WCAG 2.5.5) */
+.btn, .icon-btn, .newsletter__field input, .newsletter__field button {
+    min-height: 44px;
+}
+
+@media (max-width: 640px) {
+    /* Hero CTAs already stack on mobile via index.html-specific rules.
+       Make every page's page-hero actions stack the same way. */
+    .page-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .page-hero__actions .btn {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+    }
+
+    /* CTA section on homepage — same stacking */
+    .cta__buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .cta__buttons .btn {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    /* Sponsor rail buttons full width */
+    .sponsor-rail .btn { width: 100%; }
+
+    /* Press contact buttons full width */
+    .press-contact .btn { width: 100%; max-width: 360px; }
+
+    /* Page-hero subtitle wrapping safety */
+    .page-hero__subtitle { font-size: 1rem; line-height: 1.6; }
+
+    /* Footer: wrap link list cleanly */
+    .footer__links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    /* News list time + title alignment */
+    .news-list__item time { display: block; margin-bottom: 4px; }
+
+    /* FAQ chev icon doesn't squish title */
+    .faq__item summary { gap: 12px; }
+    .faq__item summary h3 { flex: 1 1 auto; min-width: 0; }
 }
