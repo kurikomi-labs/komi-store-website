@@ -14,6 +14,13 @@ social:
 
 buttondown_username: "githubstore"
 
+# Search Console verification (paste the content from the meta tag Google/Bing give you).
+# Leave empty to disable verification meta tags.
+google_site_verification: ""
+bing_site_verification: ""
+
+# IndexNow key — manual setup, see PR description for steps.
+
 logo: /android-chrome-512x512.png
 
 include:

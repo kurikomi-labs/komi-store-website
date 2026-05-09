@@ -44,6 +44,13 @@ Front-matter knobs per page:
 <meta name="robots" content="noindex,nofollow">
 {%- endif %}
 
+{%- if site.google_site_verification and site.google_site_verification != "" %}
+<meta name="google-site-verification" content="{{ site.google_site_verification }}">
+{%- endif %}
+{%- if site.bing_site_verification and site.bing_site_verification != "" %}
+<meta name="msvalidate.01" content="{{ site.bing_site_verification }}">
+{%- endif %}
+
 <meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f4fbf7" media="(prefers-color-scheme: light)">
 
