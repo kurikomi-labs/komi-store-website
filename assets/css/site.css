@@ -1586,6 +1586,28 @@ body::before {
 }
 .news-article__body ul, .news-article__body ol { margin: 0 0 1.25rem 1.5rem; }
 .news-article__body li { margin-bottom: 0.5rem; }
+.news-article__body img {
+    display: block;
+    max-width: min(100%, 1200px);
+    max-height: 630px;
+    width: auto;
+    height: auto;
+    margin: 1.75rem auto;
+    border-radius: var(--shape-md);
+    object-fit: contain;
+    background: var(--md-surface-container);
+}
+.news-article__body figure {
+    margin: 1.75rem auto;
+    text-align: center;
+}
+.news-article__body figure img { margin: 0 auto; }
+.news-article__body figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--md-on-surface-variant);
+    font-style: italic;
+}
 .news-article__footer {
     margin-top: 4rem;
     padding-top: 2rem;
