@@ -24,6 +24,7 @@ collections:
     preview_path: "blog/{{slug}}"
     fields:
       - { name: title, label: Title, widget: string, hint: "Used as page title and in the news listing." }
+      - { name: slug, label: URL slug, widget: string, required: false, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Lowercase letters, numbers, and hyphens only — e.g. how-github-store-started'], hint: "Custom URL slug. The post URL becomes /blog/<slug>/. Lowercase, hyphens only. Leave blank to auto-derive from filename." }
       - { name: description, label: Lede, widget: string, required: false, hint: "One-sentence summary shown under the title and in feeds." }
       - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - name: tags
@@ -31,5 +32,6 @@ collections:
         widget: list
         required: false
         field: { name: tag, widget: string }
+      - { name: redirect_from, label: Redirect from (legacy URLs), widget: list, required: false, hint: "Old URLs to 301 to this post. Useful if you change the slug after publishing.", field: { name: url, widget: string } }
       - { name: draft, label: Draft, widget: boolean, default: false, required: false, hint: "Draft posts are not published." }
       - { name: body, label: Body, widget: markdown }
