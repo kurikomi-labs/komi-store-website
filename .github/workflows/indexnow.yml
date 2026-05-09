@@ -1,0 +1,65 @@
+name: IndexNow ping
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+    branches: [main]
+
+  # Manual trigger from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch sitemap and extract URLs
+        id: sitemap
+        run: |
+          set -euo pipefail
+          curl -sSL --fail https://github-store.org/sitemap.xml -o /tmp/sitemap.xml
+          # Extract <loc> values, drop XML tags, dedupe
+          grep -oE '<loc>[^<]+' /tmp/sitemap.xml | sed 's|<loc>||' | sort -u > /tmp/urls.txt
+          echo "url_count=$(wc -l < /tmp/urls.txt)" >> "$GITHUB_OUTPUT"
+          echo "Found $(wc -l < /tmp/urls.txt) URLs in sitemap"
+          head -20 /tmp/urls.txt
+
+      - name: Build IndexNow payload
+        id: payload
+        run: |
+          set -euo pipefail
+          # Cap at 10000 URLs per IndexNow spec
+          head -10000 /tmp/urls.txt > /tmp/capped.txt
+          # Build JSON urlList array
+          python3 - <<'PY'
+          import json
+          urls = [line.strip() for line in open('/tmp/capped.txt') if line.strip()]
+          payload = {
+              "host": "github-store.org",
+              "key": "f4cd4cc41b59e8c28b7290262164e680",
+              "keyLocation": "https://github-store.org/f4cd4cc41b59e8c28b7290262164e680.txt",
+              "urlList": urls,
+          }
+          with open('/tmp/payload.json', 'w') as f:
+              json.dump(payload, f)
+          print(f"Built payload with {len(urls)} URLs")
+          PY
+
+      - name: Submit to IndexNow
+        run: |
+          set -euo pipefail
+          status=$(curl -sS -o /tmp/response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @/tmp/payload.json)
+          echo "IndexNow returned HTTP $status"
+          cat /tmp/response.txt
+          # 200/202 = accepted. 422 = invalid (key/host mismatch). Anything else fails.
+          if [ "$status" != "200" ] && [ "$status" != "202" ]; then
+            echo "::error::IndexNow rejected the payload (HTTP $status)"
+            exit 1
+          fi
