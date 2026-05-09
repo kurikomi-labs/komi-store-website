@@ -89,9 +89,12 @@ Front-matter knobs per page:
 <meta name="twitter:creator" content="@{{ site.social.twitter }}">
 
 <!-- Resource hints -->
-<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
 {%- if page.homepage %}
-<link rel="preload" as="image" href="https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/01.jpg" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp"
+      href="/assets/images/hero/01-640w.webp"
+      imagesrcset="/assets/images/hero/01-320w.webp 320w, /assets/images/hero/01-640w.webp 640w, /assets/images/hero/01-960w.webp 960w"
+      imagesizes="(max-width: 640px) 50vw, 280px"
+      fetchpriority="high">
 {%- endif %}
 
 <!-- CSS (render-blocking, with build-version cache-bust) -->
@@ -169,7 +172,7 @@ Front-matter knobs per page:
   "downloadUrl": "https://github.com/OpenHub-Store/GitHub-Store/releases",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "url": "{{ site.url }}",
-  "logo": "{{ site.url }}/android-chrome-512x512.png",
+  "image": "{{ site.url }}/android-chrome-512x512.png",
   "screenshot": [
     "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/01.jpg",
     "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/02.jpg",
