@@ -40,8 +40,8 @@ jobs:
           urls = [line.strip() for line in open('/tmp/capped.txt') if line.strip()]
           payload = {
               "host": "github-store.org",
-              "key": "f4cd4cc41b59e8c28b7290262164e680",
-              "keyLocation": "https://github-store.org/f4cd4cc41b59e8c28b7290262164e680.txt",
+              "key": "1789c2770b754474b4a41db7655f202e",
+              "keyLocation": "https://github-store.org/1789c2770b754474b4a41db7655f202e.txt",
               "urlList": urls,
           }
           with open('/tmp/payload.json', 'w') as f:
