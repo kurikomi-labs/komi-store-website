@@ -15,6 +15,10 @@ redirect_from:
         <a href="/blog/feed.xml" class="news-list__rss">RSS</a>
     </header>
 
+    <div class="blog-newsletter">
+        {% include newsletter.html id="blog-hero" title="Get the next post" subtitle="One email every 2 weeks. Founder notes, comparison guides, engineering deep-dives, and major release breakdowns." %}
+    </div>
+
     <ul class="news-list__items">
         {% assign posts = site.news | sort: "date" | reverse %}
         {% for post in posts %}
