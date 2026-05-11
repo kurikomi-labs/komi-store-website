@@ -2094,64 +2094,63 @@ body.has-announce {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   FEATURES PAGE
+   FEATURES PAGE — masonry list (cards wrap to content)
    ══════════════════════════════════════════════════════════════ */
-.features-grid {
+.features-masonry {
     padding: 24px 24px 80px;
-    display: grid;
-    gap: 28px;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    max-width: 1280px;
+    column-count: 3;
+    column-gap: 16px;
+    max-width: 1200px;
 }
 
-.feature-block {
+.feature-card {
+    break-inside: avoid;
+    margin: 0 0 16px;
+    padding: 18px 20px;
     background: var(--md-surface-container-low);
     border: 1px solid var(--md-outline-variant);
-    border-radius: var(--shape-xl);
-    padding: 32px 32px 28px;
+    border-radius: var(--shape-lg);
+    display: inline-block;
+    width: 100%;
+    transition: border-color 200ms var(--motion-standard), transform 200ms var(--motion-standard);
 }
 
-.feature-block header {
-    margin-bottom: 18px;
+.feature-card:hover {
+    border-color: var(--md-primary);
+    transform: translateY(-2px);
 }
 
-.feature-block h2 {
-    font-size: 1.375rem;
-    font-weight: 700;
+.feature-card h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--md-on-surface);
-    margin: 0 0 8px;
+    letter-spacing: -0.005em;
 }
 
-.feature-block__lede {
-    color: var(--md-on-surface-variant);
-    line-height: 1.55;
+.feature-card p {
     margin: 0;
-}
-
-.feature-block ul {
-    margin: 0;
-    padding: 0 0 0 20px;
     color: var(--md-on-surface-variant);
-}
-
-.feature-block li {
-    margin-bottom: 10px;
-    line-height: 1.55;
     font-size: 0.9375rem;
+    line-height: 1.5;
 }
 
-.feature-block code,
-.feature-block kbd {
+.feature-card code {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.8125em;
     background: var(--md-surface-container-highest);
-    padding: 1px 6px;
+    padding: 1px 5px;
     border-radius: 4px;
     color: var(--md-on-surface);
 }
 
-@media (max-width: 640px) {
-    .feature-block { padding: 24px 22px; }
+@media (max-width: 960px) {
+    .features-masonry { column-count: 2; }
+}
+
+@media (max-width: 560px) {
+    .features-masonry { column-count: 1; padding: 16px 16px 56px; }
+    .feature-card { padding: 16px 18px; }
 }
 
 /* ══════════════════════════════════════════════════════════════

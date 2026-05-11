@@ -11,7 +11,7 @@ permalink: /features/
     <div class="page-hero__inner">
         <p class="section-header__overline">Features</p>
         <h1 class="page-hero__title">Everything GitHub Store does</h1>
-        <p class="page-hero__subtitle">A discovery layer over GitHub releases, an install layer that silently delivers updates, and an honest backend that nothing about you is logged through.</p>
+        <p class="page-hero__subtitle">A discovery layer over GitHub releases, an install layer that silently delivers updates, and an honest backend that logs nothing about you.</p>
         <div class="page-hero__actions">
             <a href="/download/" class="btn btn--filled">Get GitHub Store</a>
             <a href="https://github.com/OpenHub-Store/GitHub-Store/wiki" class="btn btn--tonal" target="_blank" rel="noopener">Read the Wiki</a>
@@ -19,162 +19,54 @@ permalink: /features/
     </div>
 </section>
 
-<section class="features-grid container">
-    <article class="feature-block reveal">
-        <header>
-            <h2>Smart discovery</h2>
-            <p class="feature-block__lede">Curated index over the live GitHub Search API. Honest freshness with a passthrough fallback. Only repos that ship installable assets show up.</p>
-        </header>
-        <ul>
-            <li>Home sections for <strong>Trending</strong>, <strong>Hot Release</strong>, and <strong>Most Popular</strong> projects with time-based filters.</li>
-            <li>Platform-aware topic scoring — Android users see APK-shipping repos first; desktop users see DMG/EXE/AppImage first.</li>
-            <li>Search filters for <strong>platform</strong>, <strong>language</strong>, and <strong>sort order</strong>, including <em>Recently Updated</em> (repo activity) and <em>Recently Released</em> (latest stable release date).</li>
-            <li>Search history saved locally and surfaced as suggestions.</li>
-            <li><strong>Clipboard link detection</strong> — paste a GitHub URL anywhere on your device and the app offers quick navigation.</li>
-            <li><strong>Hide seen repos</strong> — optional filter that removes repos you've already viewed from discovery feeds.</li>
-            <li><strong>Add from starred</strong> — find APK-shipping repos in your GitHub stars and one-tap install them.</li>
-        </ul>
-    </article>
+<section class="features-masonry container">
+    <article class="feature-card"><h3>Smart discovery</h3><p>Trending, hot, and most popular projects per platform.</p></article>
+    <article class="feature-card"><h3>Filtered search</h3><p>Platform, language, Recently Updated, Recently Released sorts.</p></article>
+    <article class="feature-card"><h3>Clipboard detection</h3><p>Spots GitHub URLs and offers one-tap navigation.</p></article>
+    <article class="feature-card"><h3>Add from starred</h3><p>Find APK-shipping repos among your GitHub stars.</p></article>
+    <article class="feature-card"><h3>Hide seen repos</h3><p>Filter out repositories you've already viewed.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Release browser &amp; install</h2>
-            <p class="feature-block__lede">Browse and install any release, not just the latest. Compatibility checks and APK introspection built in.</p>
-        </header>
-        <ul>
-            <li><strong>Release picker</strong> with the full release history per repository.</li>
-            <li>Single <em>Install latest</em> action plus an expandable list of all available releases and installers.</li>
-            <li>Manual install path with automatic compatibility checks.</li>
-            <li><strong>APK Inspect</strong> (Android) — preview app label, signing fingerprint, version codes, min/target SDK, components, file metadata, and grouped permissions colour-coded by protection level — before you install.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>One-tap install</h3><p>Hands the right binary to your OS — APK, EXE, DMG, AppImage, DEB.</p></article>
+    <article class="feature-card"><h3>Release picker</h3><p>Install any release, not just the latest.</p></article>
+    <article class="feature-card"><h3>Silent install</h3><p>Shizuku, Sui, or Dhizuku — install without prompts.</p></article>
+    <article class="feature-card"><h3>APK Inspect</h3><p>Peek inside any APK before installing — permissions, signing key, SDK.</p></article>
+    <article class="feature-card"><h3>Mirror system</h3><p>Multi-source race with SHA-256 verification for restricted networks.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Download mirror system</h2>
-            <p class="feature-block__lede">A multi-source race against the direct GitHub CDN. Verified end-to-end. Built for networks where <code>github.com</code> is throttled or blocked.</p>
-        </header>
-        <ul>
-            <li>Multi-source race for the fastest available mirror.</li>
-            <li>End-to-end <strong>SHA-256 verification</strong> against GitHub's published asset digests.</li>
-            <li>Curated community mirror list, updatable from the backend without an app release.</li>
-            <li>Custom mirror URL for self-hosted <code>gh-proxy</code>-style instances.</li>
-            <li>Auto-suggest sheet after sustained slow downloads — opt in with one tap, dismissible, never nags.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>Background update checks</h3><p>3h, 6h, 12h, or 24h cadence with notifications.</p></article>
+    <article class="feature-card"><h3>Auto-update</h3><p>Silently installs new versions once Shizuku/Sui/Dhizuku is enabled.</p></article>
+    <article class="feature-card"><h3>Signing-key verification</h3><p>Blocks any update where the signing key doesn't match.</p></article>
+    <article class="feature-card"><h3>Pre-release toggle</h3><p>Opt into betas per app, with a switch-to-stable rollback.</p></article>
+    <article class="feature-card"><h3>What's changed</h3><p>Concatenated release notes for every version you skipped.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Rich details</h2>
-            <p class="feature-block__lede">Everything a release page tells you — plus rendered READMEs, translation, signing-fingerprint pinning, and per-app variant filters.</p>
-        </header>
-        <ul>
-            <li>App name, version, share action.</li>
-            <li>Stars, forks, open issues, license — sourced from the backend so you don't burn GitHub quota.</li>
-            <li>Rendered README ("About this app") with optional translation to your chosen language.</li>
-            <li>Release notes with full Markdown formatting per release.</li>
-            <li>Pre-release channel chip — toggle <em>Include betas</em> / <em>Stable only</em> per app, with a <em>switch to stable</em> rollback when a clean stable exists.</li>
-            <li><strong>Merged "what's changed since v1.0"</strong> — concatenated release notes for every version skipped between updates.</li>
-            <li><strong>Manual refresh</strong> — pull-to-refresh on Android, overflow-menu Refresh on every platform, <kbd>Ctrl/Cmd+R</kbd> on desktop. 30-second per-repo cooldown surfaces as a friendly retry-after toast.</li>
-            <li>Deep linking via <code>githubstore://</code>, <code>github.com</code>, or <code>github-store.org</code>.</li>
-            <li>Developer profile screen — explore a developer's repositories and activity.</li>
-            <li><strong>Per-app variant pinning + asset filter regex</strong> — pin <code>-arm64</code>, <code>-stable</code>, <code>-no-jvm</code>, etc., and write a glob/regex filter so updates always pick the right artifact.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>Obtainium import</h3><p>Bring your library over with one tap. Export back any time.</p></article>
+    <article class="feature-card"><h3>Library Imports</h3><p>Recognises GitHub-sourced apps already on your device.</p></article>
+    <article class="feature-card"><h3>Link existing apps</h3><p>Connect any installed app to its GitHub repo for updates.</p></article>
+    <article class="feature-card"><h3>Variant pinning</h3><p>Pin <code>-arm64</code>, <code>-stable</code>, etc. + glob/regex asset filter.</p></article>
+    <article class="feature-card"><h3>Open / uninstall / downgrade</h3><p>All from the app, no system Settings detour.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>App management</h2>
-            <p class="feature-block__lede">Open, uninstall, downgrade, link existing apps, import from Obtainium, scan for GitHub-sourced apps already on the device.</p>
-        </header>
-        <ul>
-            <li>Open, uninstall, downgrade installed apps directly from GitHub Store.</li>
-            <li><strong>Library Imports</strong> (Android) — recognises GitHub-sourced apps already on the device (Obtainium, sideload, F-Droid). Three match strategies: manifest hint, signing fingerprint, backend lookup. High-confidence matches link silently; the rest land in a one-tap review wizard.</li>
-            <li><strong>Obtainium import / export</strong> — bring your library over with one tap; export back to Obtainium any time. Round-trip preserved.</li>
-            <li><strong>Link apps</strong> — connect any app already installed on your device to its GitHub repo so GitHub Store tracks updates for it.</li>
-            <li>Sectioned Apps screen — updates, pending installs, and installed apps grouped so you see what needs attention first.</li>
-            <li>Android: APK architecture matching (armv7/armv8), package monitoring, update tracking.</li>
-            <li>Android: <strong>Shizuku and Sui silent install</strong> — install and update apps without prompts (requires <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> or Sui running with ADB or root).</li>
-            <li>Android: <strong>Dhizuku silent install</strong> — Magisk-free silent installs on Xiaomi, OPPO, vivo, and Huawei stock ROMs via the <a href="https://github.com/iamr0s/Dhizuku" target="_blank" rel="noopener">Dhizuku</a> Device Owner method.</li>
-            <li>Android: <strong>Signing-fingerprint verification for auto-updates</strong> — auto-update is blocked if the new APK's signing key doesn't match what the row was registered with. Prevents silent compromise on a hijacked release.</li>
-            <li>Android: Background update checking (3h / 6h / 12h / 24h) with notifications.</li>
-            <li>Android: Auto-update — silently installs available updates via Shizuku/Sui/Dhizuku when enabled.</li>
-            <li>Desktop: downloads installers to your Downloads folder and opens them with the default handler.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>Rendered README</h3><p>"About this app" with optional translation to your language.</p></article>
+    <article class="feature-card"><h3>Release notes</h3><p>Markdown-rendered notes for every release.</p></article>
+    <article class="feature-card"><h3>Deep linking</h3><p><code>githubstore://</code>, <code>github.com</code>, and <code>github-store.org</code> URLs.</p></article>
+    <article class="feature-card"><h3>Developer profile</h3><p>Explore a developer's repositories and activity.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Collections</h2>
-            <p class="feature-block__lede">Personal libraries that sync locally — no account required for favourites and history.</p>
-        </header>
-        <ul>
-            <li><strong>Starred</strong> — browse your GitHub starred repositories from inside the app.</li>
-            <li><strong>Favourites</strong> — save repos locally for quick access; works without sign-in.</li>
-            <li><strong>Recently viewed</strong> — automatic per-device history of repos you've opened.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>GitHub OAuth</h3><p>Device flow routed through the backend — works on throttled networks.</p></article>
+    <article class="feature-card"><h3>PAT sign-in</h3><p>Personal Access Token fallback for blocked OAuth flows.</p></article>
+    <article class="feature-card"><h3>What's new</h3><p>Release highlights on first launch after each update.</p></article>
+    <article class="feature-card"><h3>Announcements feed</h3><p>Privacy notices, surveys, advisories — anonymous, server-side dismissable.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Cross-version communication</h2>
-            <p class="feature-block__lede">What's-new sheets and an in-app announcements feed that doesn't track you.</p>
-        </header>
-        <ul>
-            <li><strong>What's new sheet</strong> — one-shot release highlights on first launch after each update; permanent history under Profile → What's new.</li>
-            <li><strong>Announcements feed</strong> — privacy notices, surveys, security advisories, and news in Profile. Anonymous backend feed; dismissal and read state stay on the device.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>Starred</h3><p>Browse your GitHub starred repositories in-app.</p></article>
+    <article class="feature-card"><h3>Favourites</h3><p>Save repos locally — no sign-in required.</p></article>
+    <article class="feature-card"><h3>Recently viewed</h3><p>Auto-tracked, per device.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Authentication</h2>
-            <p class="feature-block__lede">OAuth that survives throttled networks. Personal Access Token fallback for users behind hard blocks.</p>
-        </header>
-        <ul>
-            <li>GitHub OAuth via the device flow, routed through the backend by default so sign-in keeps working when <code>github.com</code> is throttled. Falls back to direct GitHub on infrastructure errors.</li>
-            <li><strong>Personal Access Token sign-in</strong> for users whose network blocks the OAuth browser flow entirely. Validates locally, full feature parity with the OAuth path.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>Theme picker</h3><p>Dynamic, Ocean, Purple, Forest, Slate, Amber. Light, dark, system.</p></article>
+    <article class="feature-card"><h3>AMOLED black</h3><p>True-black surface for OLED screens.</p></article>
+    <article class="feature-card"><h3>13 languages</h3><p>en, ar, bn, zh-Hans, es, fr, hi, it, ja, ko, pl, ru, tr.</p></article>
+    <article class="feature-card"><h3>Proxy support</h3><p>HTTP, SOCKS, System — with optional auth.</p></article>
+    <article class="feature-card"><h3>Custom mirror URL</h3><p>Point at your own self-hosted <code>gh-proxy</code>-style instance.</p></article>
 
-    <article class="feature-block reveal">
-        <header>
-            <h2>Tweaks</h2>
-            <p class="feature-block__lede">Theme, network, installer, translation, updates, storage, and feedback — all in one Settings screen.</p>
-        </header>
-        <ul>
-            <li><strong>Appearance</strong> — theme color picker (Dynamic, Ocean, Purple, Forest, Slate, Amber), light/dark/system, AMOLED black, system font toggle, scrollbar toggle (desktop).</li>
-            <li><strong>Network</strong> — proxy configuration with HTTP/SOCKS support and optional auth; download-mirror picker with latency test.</li>
-            <li><strong>Installation</strong> (Android) — choose default installer, Shizuku/Sui silent, or Dhizuku Device Owner, with real-time installer status. <em>Installer attribution</em> sub-setting lets you spoof the installer-package name silent installs claim — useful for apps that gate on install source.</li>
-            <li><strong>Translation provider</strong> — switch between Google Translate (free, no key) and Youdao (custom app key + secret) for README and release-note translation.</li>
-            <li><strong>Updates</strong> (Android) — update check interval, pre-release inclusion, auto-update toggle.</li>
-            <li><strong>Storage</strong> — view and clear downloaded package cache.</li>
-            <li><strong>Send feedback</strong> — bug reports and feature requests sent as email or pre-filled GitHub issues. The diagnostics card shows exactly what gets sent before you send it.</li>
-        </ul>
-    </article>
-
-    <article class="feature-block reveal">
-        <header>
-            <h2>Localization</h2>
-            <p class="feature-block__lede">Available in 13 languages.</p>
-        </header>
-        <ul>
-            <li>English, Arabic, Bengali, Chinese (Simplified), Spanish, French, Hindi, Italian, Japanese, Korean, Polish, Russian, Turkish.</li>
-        </ul>
-    </article>
-
-    <article class="feature-block reveal">
-        <header>
-            <h2>Network &amp; performance</h2>
-            <p class="feature-block__lede">An open-source backend, OS-level TLS, and a caching layer designed to never burn your GitHub API quota.</p>
-        </header>
-        <ul>
-            <li>Dynamic proxy support (HTTP, SOCKS, System) for configurable network routing.</li>
-            <li>Enhanced caching system — faster loading and reduced API usage.</li>
-            <li>Anonymous backend at <code>api.github-store.org</code> for auth proxy, curated discovery, and the announcements feed. <strong>Open source under Apache 2.0 — self-hostable.</strong></li>
-            <li><strong>Desktop trusts OS-installed root certificates</strong> in addition to the JVM bundle. TLS-intercepting tools (Watt Toolkit, FastGithub, Fiddler, corporate MITM proxies) work without <code>keytool</code> gymnastics.</li>
-        </ul>
-    </article>
+    <article class="feature-card"><h3>OS root certificates</h3><p>Desktop trusts system-installed roots — TLS-intercepting tools work.</p></article>
+    <article class="feature-card"><h3>Open-source backend</h3><p>Apache-2.0 and self-hostable. Hashes search queries client-side.</p></article>
+    <article class="feature-card"><h3>No account needed</h3><p>Sign-in is optional. Most features work without it.</p></article>
 </section>
 
 <section class="cta">
