@@ -1,8 +1,8 @@
 ---
 layout: default
 title_full: GitHub Store — Open-Source App Store for GitHub Releases
-description: Free, open-source app store for GitHub releases. F-Droid + Obtainium alternative for Android, Linux, macOS, Windows. Auto-update, silent install, China-friendly mirrors.
-keywords: github store, github releases app store, f-droid alternative, obtainium alternative, install android apps from github, open source app store, apk auto update, kotlin multiplatform, compose multiplatform, china mirror
+description: Free, open-source app store for GitHub releases. Discover, install, and auto-update apps on Android, Linux, macOS, Windows. Silent install, China-friendly mirrors.
+keywords: github store, github releases app store, install android apps from github, open source app store, apk auto update, kotlin multiplatform, compose multiplatform, china mirror
 homepage: true
 ---
 
@@ -100,79 +100,6 @@ homepage: true
     </div>
 </div>
 
-<!-- ═══ Comparison ═══ -->
-<section class="comparison container" id="comparison" aria-labelledby="comparison-heading">
-    <div class="section-header reveal">
-        <p class="section-header__overline">Comparison</p>
-        <h2 class="section-header__title" id="comparison-heading">How GitHub Store compares</h2>
-        <p class="section-header__subtitle">Looking for an <strong>F-Droid alternative</strong>, <strong>Obtainium alternative</strong>, or a way to install Android apps directly from GitHub? GitHub Store turns any GitHub release into a one-tap install across all your devices.</p>
-    </div>
-    <div class="comparison__scroller" role="region" aria-label="Feature comparison table">
-        <table class="comparison__table">
-            <thead>
-                <tr>
-                    <th scope="col">Feature</th>
-                    <th scope="col" class="comparison__own">GitHub Store</th>
-                    <th scope="col">Obtainium</th>
-                    <th scope="col">F-Droid</th>
-                    <th scope="col">Aurora Store</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Open source</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Apache-2.0</td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
-                </tr>
-                <tr>
-                    <th scope="row">Cross-platform (Desktop too)</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Win, macOS, Linux, Android</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Android only</td>
-                </tr>
-                <tr>
-                    <th scope="row">Discover new apps</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Trending, popular, hot</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Manual repo URL</td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span> Curated</td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span> Play Store mirror</td>
-                </tr>
-                <tr>
-                    <th scope="row">Silent install (Shizuku/Dhizuku)</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span></td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span> Shizuku</td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span></td>
-                    <td><span class="cmp-no" aria-label="no">✕</span></td>
-                </tr>
-                <tr>
-                    <th scope="row">China mirror system</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Multi-source race + SHA-256 verify</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span></td>
-                    <td><span class="cmp-partial" aria-label="partial">~</span> Limited</td>
-                    <td><span class="cmp-partial" aria-label="partial">~</span> Limited</td>
-                </tr>
-                <tr>
-                    <th scope="row">Direct GitHub releases</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span> Native</td>
-                    <td><span class="cmp-yes" aria-label="yes">✓</span> Native</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Curated only</td>
-                    <td><span class="cmp-no" aria-label="no">✕</span> Play only</td>
-                </tr>
-                <tr>
-                    <th scope="row">Library import from Obtainium</th>
-                    <td class="comparison__own"><span class="cmp-yes" aria-label="yes">✓</span></td>
-                    <td><span class="cmp-na" aria-label="not applicable">—</span></td>
-                    <td><span class="cmp-no" aria-label="no">✕</span></td>
-                    <td><span class="cmp-no" aria-label="no">✕</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
 <!-- ═══ FAQ ═══ -->
 <section class="faq container" id="faq" aria-labelledby="faq-heading">
     <div class="section-header reveal">
@@ -189,12 +116,12 @@ homepage: true
             <p>Yes. The app, the source code, and the backend are all open source under Apache 2.0.</p>
         </details>
         <details class="faq__item">
-            <summary><h3>How is GitHub Store different from F-Droid?</h3><span class="faq__chev" aria-hidden="true">+</span></summary>
-            <p>F-Droid only includes apps in its curated FOSS-only repository. GitHub Store discovers and installs apps directly from GitHub releases — including apps not in F-Droid.</p>
+            <summary><h3>Which platforms does GitHub Store support?</h3><span class="faq__chev" aria-hidden="true">+</span></summary>
+            <p>Android, Windows, macOS, and Linux. The codebase is shared across all four via Kotlin Multiplatform and Compose Multiplatform.</p>
         </details>
         <details class="faq__item">
-            <summary><h3>How is GitHub Store different from Obtainium?</h3><span class="faq__chev" aria-hidden="true">+</span></summary>
-            <p>Obtainium is a power-user updater for tracked GitHub repos. GitHub Store adds a discovery layer (browse trending, popular, hot releases), an install layer (Shizuku/Dhizuku silent install), and works on Desktop too. You can import your Obtainium library with one tap.</p>
+            <summary><h3>How does GitHub Store keep installs current?</h3><span class="faq__chev" aria-hidden="true">+</span></summary>
+            <p>GitHub Store remembers what you installed and surfaces new releases automatically. On Android you can opt in to silent updates via Shizuku, Sui, or Dhizuku. Auto-update verifies the signing fingerprint matches the originally-installed key before applying any update.</p>
         </details>
         <details class="faq__item">
             <summary><h3>Does GitHub Store work in China?</h3><span class="faq__chev" aria-hidden="true">+</span></summary>
@@ -372,7 +299,7 @@ homepage: true
 <!-- ═══ Newsletter ═══ -->
 <section class="newsletter-section container" aria-labelledby="newsletter-heading">
     <div class="newsletter-section__inner reveal" id="newsletter-heading">
-        {% include newsletter.html id="home" title="Stay in the loop" subtitle="Founder essays, comparison guides, and release notes. Roughly one email every 2 weeks. No spam, no tracking, no selling your address." %}
+        {% include newsletter.html id="home" title="Stay in the loop" subtitle="Founder essays, engineering deep-dives, and release notes. Roughly one email every 2 weeks. No spam, no tracking, no selling your address." %}
     </div>
 </section>
 

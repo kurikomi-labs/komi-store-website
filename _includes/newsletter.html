@@ -18,7 +18,7 @@ Renders nothing when site.buttondown_username is empty.
 {% if site.buttondown_username and site.buttondown_username != "" %}
 {%- assign nl_id = include.id | default: "default" -%}
 {%- assign nl_title = include.title | default: "Get the next post" -%}
-{%- assign nl_sub = include.subtitle | default: "Roughly one essay every 2 weeks. Founder notes, comparison guides, and major release breakdowns. No spam." -%}
+{%- assign nl_sub = include.subtitle | default: "Roughly one essay every 2 weeks. Founder notes, engineering deep-dives, and major release breakdowns. No spam." -%}
 {%- assign nl_cta = include.cta | default: "Subscribe" -%}
 {%- assign nl_variant = include.variant | default: "card" -%}
 

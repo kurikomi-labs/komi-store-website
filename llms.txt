@@ -1,10 +1,10 @@
 # GitHub Store
 
-> Free, open-source app store for GitHub releases. Cross-platform (Android, Windows, macOS, Linux). Apache-2.0. Built by Usmon Narzullayev with Kotlin Multiplatform + Compose Multiplatform. F-Droid + Obtainium alternative with discovery, silent install, signing-key verification, and a multi-source mirror system for restricted networks.
+> Free, open-source app store for GitHub releases. Cross-platform (Android, Windows, macOS, Linux). Apache-2.0. Built by Usmon Narzullayev with Kotlin Multiplatform + Compose Multiplatform. Discovery, silent install, signing-key verification, and a multi-source mirror system for restricted networks.
 
 ## Core pages
 
-- [Homepage](https://github-store.org/): What GitHub Store is, who uses it, comparison vs F-Droid / Obtainium / Aurora Store, FAQ, About panel.
+- [Homepage](https://github-store.org/): What GitHub Store is, who uses it, FAQ, About panel.
 - [Download](https://github-store.org/download/): Per-platform install methods. Android (APK direct, F-Droid, Obtainium). Windows (EXE, MSI, Scoop, Winget). macOS (DMG arm64/x64, PKG). Linux (AppImage, DEB, RPM, pacman). SHA-256 signing fingerprint for verification.
 - [Features](https://github-store.org/features/): Full feature catalog. Discovery, release browser, mirror system, rich details, app management (Library Imports, Obtainium import/export, Shizuku/Sui/Dhizuku silent install), collections, announcements feed, authentication, tweaks, localization (13 languages), network & performance.
 - [Press](https://github-store.org/press/): Boilerplate (1-sentence / 1-paragraph / 3-paragraph). Brand assets, color palette, screenshots, founder bio, "Featured in" list, quick facts table, press contact.
