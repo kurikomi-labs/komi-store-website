@@ -87,6 +87,10 @@ async function handleRegister(req: Request, env: Env): Promise<Response> {
     return jsonResponse({ error: "invalid_challenge" }, 400);
   }
 
+  if (!(await verifyPkceChallenge(code_verifier, code_challenge))) {
+    return jsonResponse({ error: "challenge_mismatch" }, 400);
+  }
+
   const key = `${KV_PREFIX}${state}`;
   const existing = await env.OAUTH_STATE.get(key);
   if (existing !== null) {
@@ -250,6 +254,32 @@ function methodNotAllowed(allowed: string): Response {
     status: 405,
     headers: { Allow: allowed },
   });
+}
+
+async function verifyPkceChallenge(verifier: string, challenge: string): Promise<boolean> {
+  // RFC 7636 §4.6: code_challenge MUST equal BASE64URL-ENCODE(SHA256(ASCII(code_verifier))).
+  // VERIFIER_RE restricts verifier to base64url alphabet, so its UTF-8 encoding
+  // is byte-identical to ASCII — TextEncoder is safe here.
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier));
+  const expected = base64UrlEncode(new Uint8Array(digest));
+  return constantTimeEqual(expected, challenge);
+}
+
+function base64UrlEncode(bytes: Uint8Array): string {
+  let binary = "";
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]!);
+  }
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function constantTimeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) {
+    diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return diff === 0;
 }
 
 function sanitizeReason(raw: string): string {

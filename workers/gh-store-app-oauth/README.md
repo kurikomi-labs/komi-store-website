@@ -82,6 +82,7 @@ Responses:
 | 400    | `{ "error": "invalid_state" }`             | `state` missing or not `^[A-Za-z0-9_-]{32,256}$` |
 | 400    | `{ "error": "invalid_verifier" }`          | `code_verifier` not `^[A-Za-z0-9_-]{43,128}$`    |
 | 400    | `{ "error": "invalid_challenge" }`         | `code_challenge` not `^[A-Za-z0-9_-]{43}$`       |
+| 400    | `{ "error": "challenge_mismatch" }`        | `code_challenge` ≠ `base64url(SHA-256(code_verifier))` |
 | 400    | `{ "error": "invalid_json" }`              | Body unparseable or not an object                |
 | 409    | `{ "error": "state_already_registered" }`  | This `state` is already pinned in KV             |
 | 413    | `{ "error": "payload_too_large" }`         | Body exceeds 2 KiB                               |
@@ -293,6 +294,13 @@ a 60 s single-use verifier in KV — abuse there self-throttles via KV misses.
   Worker → backend) and is keyed in KV by the single-use `state`.
 - `state`, `code_verifier`, `code_challenge`, and `handoff_id` are each
   strictly format-validated before any KV access or backend call.
+- **PKCE challenge is verified at the edge** (defense in depth). After format
+  validation, the Worker computes `base64url(SHA-256(code_verifier))` via
+  `crypto.subtle.digest` and constant-time compares it with the supplied
+  `code_challenge`. Mismatch → `400 challenge_mismatch` before any KV write or
+  backend round-trip. This is independent of, and additional to, the backend's
+  later verification at `/v1/oauth/exchange` — catches client bugs (and any
+  pre-OAuth tampering) before the GitHub authorize hop, not after.
 - KV `oauth:verifier:<state>` TTL is 60 s and is deleted immediately on first
   read. KV has no atomic GETDEL — the read-then-delete pair is effectively
   single-use because subsequent reads will miss either due to the prior delete
