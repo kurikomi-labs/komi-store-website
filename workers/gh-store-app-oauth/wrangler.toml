@@ -1,0 +1,60 @@
+name = "gh-store-app-oauth"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+workers_dev = false
+
+# Production routes — Worker handles /auth/* on the apex domain.
+# Jekyll site continues to serve everything else.
+[[routes]]
+pattern = "github-store.org/auth/*"
+zone_name = "github-store.org"
+
+# Public, non-secret config.
+[vars]
+GITHUB_CLIENT_ID = "Ov23linTY28VFpFjFiI9"
+BACKEND_EXCHANGE_URL = "https://api.github-store.org/v1/oauth/exchange"
+APP_SCHEME = "githubstore"
+
+# KV namespace holds the one-shot state token (TTL 60s).
+# Create with:
+#   wrangler kv namespace create OAUTH_STATE
+#   wrangler kv namespace create OAUTH_STATE --preview
+# Then paste the returned IDs below.
+[[kv_namespaces]]
+binding = "OAUTH_STATE"
+id = "REPLACE_WITH_KV_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
+
+# Per-IP rate limit on /auth/start. Workers Rate Limiting bindings only support
+# `period = 10` or `period = 60` seconds — closest match to the agreed 60/hr/IP
+# intent is 2 requests per 60s sliding window (~120/hr ceiling). This blocks
+# scrapers (which run thousands/hr) while leaving headroom for shared NAT.
+# For an exact hourly cap, layer a Cloudflare WAF rate-limit rule on the zone.
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 2, period = 60 }
+
+# Secrets (do NOT commit values — set via `wrangler secret put`):
+#   OAUTH_SERVICE_TOKEN   shared-secret header sent to api.github-store.org
+
+# Staging environment — same code, separate KV + secret, no live route.
+[env.staging]
+name = "gh-store-app-oauth-staging"
+workers_dev = true
+
+[env.staging.vars]
+GITHUB_CLIENT_ID = "Ov23linTY28VFpFjFiI9"
+BACKEND_EXCHANGE_URL = "https://api.github-store.org/v1/oauth/exchange"
+APP_SCHEME = "githubstore"
+
+[[env.staging.kv_namespaces]]
+binding = "OAUTH_STATE"
+id = "REPLACE_WITH_STAGING_KV_ID"
+
+[[env.staging.unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1002"
+simple = { limit = 2, period = 60 }

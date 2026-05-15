@@ -66,3 +66,5 @@ exclude:
   - Gemfile.lock
   - vendor
   - .brain
+  - workers
+  - node_modules

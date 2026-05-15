@@ -1,0 +1,4 @@
+# Copy to `.dev.vars` for local `wrangler dev`. NEVER commit `.dev.vars`.
+# In production these are set via `wrangler secret put <NAME>`.
+
+OAUTH_SERVICE_TOKEN="replace-me-with-shared-secret"
