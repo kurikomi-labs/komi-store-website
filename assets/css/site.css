@@ -127,7 +127,7 @@ body {
     color: var(--md-on-surface);
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background 500ms var(--motion-standard), color 500ms var(--motion-standard);
+    transition: background 250ms var(--motion-standard), color 250ms var(--motion-standard);
 }
 
 a { color: var(--md-primary); text-decoration: none; }
@@ -165,7 +165,7 @@ body::before {
     background: transparent;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    transition: all 400ms var(--motion-standard);
+    transition: all 250ms var(--motion-standard);
 }
 
 .top-bar.scrolled {
@@ -195,7 +195,7 @@ body::before {
 .top-bar__brand img {
     width: 36px; height: 36px;
     border-radius: var(--shape-sm);
-    transition: transform 400ms var(--motion-spring);
+    transition: transform 260ms var(--motion-spring);
 }
 
 .top-bar__brand:hover img { transform: scale(1.1) rotate(-4deg); }
@@ -247,7 +247,7 @@ body::before {
     position: absolute;
     opacity: 0;
     transform: scale(0.4) rotate(-120deg);
-    transition: all 500ms var(--motion-spring);
+    transition: all 300ms var(--motion-spring);
 }
 
 .theme-toggle[data-active="sun"] .t-sun,
@@ -398,7 +398,7 @@ body::before {
     font-weight: 500;
     width: fit-content;
     opacity: 0; transform: translateY(20px);
-    animation: fadeUp 700ms 200ms var(--motion-emphasized) forwards;
+    animation: fadeUp 450ms 80ms var(--motion-emphasized) forwards;
 }
 
 .hero__badge__dot {
@@ -428,7 +428,7 @@ body::before {
     line-height: 1.08;
     letter-spacing: -0.035em;
     opacity: 0; transform: translateY(30px);
-    animation: fadeUp 800ms 350ms var(--motion-emphasized) forwards;
+    animation: fadeUp 500ms 150ms var(--motion-emphasized) forwards;
 }
 
 .hero__title em {
@@ -445,7 +445,7 @@ body::before {
     line-height: 1.7;
     max-width: 500px;
     opacity: 0; transform: translateY(25px);
-    animation: fadeUp 800ms 500ms var(--motion-emphasized) forwards;
+    animation: fadeUp 500ms 250ms var(--motion-emphasized) forwards;
 }
 
 .hero__actions {
@@ -454,7 +454,7 @@ body::before {
     gap: 14px;
     margin-top: 12px;
     opacity: 0; transform: translateY(25px);
-    animation: fadeUp 800ms 650ms var(--motion-emphasized) forwards;
+    animation: fadeUp 500ms 350ms var(--motion-emphasized) forwards;
 }
 
 /* Stats */
@@ -465,7 +465,7 @@ body::before {
     padding-top: 28px;
     border-top: 1px solid var(--md-outline-variant);
     opacity: 0; transform: translateY(20px);
-    animation: fadeUp 800ms 800ms var(--motion-emphasized) forwards;
+    animation: fadeUp 500ms 450ms var(--motion-emphasized) forwards;
 }
 
 .hero__stat__value {
@@ -488,7 +488,7 @@ body::before {
     align-items: center;
     position: relative;
     opacity: 0; transform: translateY(40px) scale(0.95);
-    animation: fadeUpScale 1000ms 400ms var(--motion-emphasized) forwards;
+    animation: fadeUpScale 600ms 180ms var(--motion-emphasized) forwards;
 }
 
 .hero__phone { position: relative; width: 280px; z-index: 2; }
@@ -557,17 +557,17 @@ body::before {
 
 .hero__chip--1 {
     top: 8%; left: -60px;
-    animation: chipIn 600ms 900ms var(--motion-spring) forwards, chipFloat 5s 1600ms ease-in-out infinite;
+    animation: chipIn 400ms 550ms var(--motion-spring) forwards, chipFloat 5s 1200ms ease-in-out infinite;
 }
 
 .hero__chip--2 {
     bottom: 12%; right: -70px;
-    animation: chipIn 600ms 1100ms var(--motion-spring) forwards, chipFloat 5s 1900ms ease-in-out infinite;
+    animation: chipIn 400ms 700ms var(--motion-spring) forwards, chipFloat 5s 1400ms ease-in-out infinite;
 }
 
 .hero__chip--3 {
     top: 55%; left: -50px;
-    animation: chipIn 600ms 1300ms var(--motion-spring) forwards, chipFloat 5s 2200ms ease-in-out infinite;
+    animation: chipIn 400ms 850ms var(--motion-spring) forwards, chipFloat 5s 1600ms ease-in-out infinite;
 }
 
 @keyframes chipIn {
@@ -980,7 +980,7 @@ body::before {
     border: 1px solid var(--md-outline-variant);
     border-radius: var(--shape-xl);
     padding: 40px 32px;
-    transition: all 500ms var(--motion-emphasized);
+    transition: all 280ms var(--motion-emphasized);
     position: relative;
     overflow: hidden;
 }
@@ -992,7 +992,7 @@ body::before {
     width: 180px; height: 180px;
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 500ms var(--motion-standard);
+    transition: opacity 260ms var(--motion-standard);
 }
 
 .feature-card:nth-child(1)::after { background: radial-gradient(circle, var(--md-glow-strong), transparent 70%); }
@@ -1016,7 +1016,7 @@ body::before {
     margin-bottom: 28px;
     position: relative;
     z-index: 1;
-    transition: transform 400ms var(--motion-spring);
+    transition: transform 260ms var(--motion-spring);
 }
 
 .feature-card:hover .feature-card__icon { transform: scale(1.1) rotate(-3deg); }
@@ -1073,7 +1073,7 @@ body::before {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, var(--md-primary), var(--md-tertiary));
-    transition: width 1800ms var(--motion-emphasized);
+    transition: width 900ms var(--motion-emphasized);
 }
 
 .steps__line.animate::after { width: 100%; }
@@ -1099,7 +1099,7 @@ body::before {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    transition: all 700ms var(--motion-spring);
+    transition: all 400ms var(--motion-spring);
     position: relative;
 }
 
@@ -1112,7 +1112,7 @@ body::before {
     border: 2px solid var(--md-primary);
     opacity: 0;
     transform: scale(0.8);
-    transition: all 600ms var(--motion-spring);
+    transition: all 350ms var(--motion-spring);
 }
 
 .step.active .step__number {
@@ -1235,7 +1235,7 @@ body::before {
     align-items: center;
     justify-content: center;
     margin-top: 1px;
-    transition: transform 400ms var(--motion-spring);
+    transition: transform 260ms var(--motion-spring);
 }
 
 .checklist li:hover .check-icon { transform: scale(1.15); }
@@ -1346,20 +1346,20 @@ body::before {
 .reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 800ms var(--motion-emphasized), transform 800ms var(--motion-emphasized);
+    transition: opacity 450ms var(--motion-emphasized), transform 450ms var(--motion-emphasized);
 }
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 .reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger > *:nth-child(2) { transition-delay: 150ms; }
-.reveal-stagger > *:nth-child(3) { transition-delay: 300ms; }
-.reveal-stagger > *:nth-child(4) { transition-delay: 450ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 70ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 140ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 210ms; }
 
 .reveal-scale {
     opacity: 0;
     transform: scale(0.92);
-    transition: opacity 800ms var(--motion-emphasized), transform 800ms var(--motion-emphasized);
+    transition: opacity 450ms var(--motion-emphasized), transform 450ms var(--motion-emphasized);
 }
 
 .reveal-scale.visible { opacity: 1; transform: scale(1); }
@@ -1775,7 +1775,7 @@ body.has-announce {
     box-shadow: 0 6px 18px -10px var(--warn-glow);
     overflow: hidden;
     transform: translateY(-100%);
-    animation: announceSlideIn 600ms 200ms var(--motion-emphasized) forwards;
+    animation: announceSlideIn 350ms 80ms var(--motion-emphasized) forwards;
 }
 
 @keyframes announceSlideIn {

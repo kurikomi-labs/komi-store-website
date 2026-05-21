@@ -124,7 +124,7 @@ sitemap: false
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 500ms var(--motion-standard), color 500ms var(--motion-standard);
+            transition: background 250ms var(--motion-standard), color 250ms var(--motion-standard);
         }
         a { color: var(--md-primary); text-decoration: none; }
 
@@ -158,7 +158,7 @@ sitemap: false
             max-width: 480px; width: calc(100% - 32px);
             text-align: center; box-shadow: var(--elevation-3);
             opacity: 0; transform: translateY(30px) scale(0.97);
-            animation: cardIn 800ms 200ms var(--motion-emphasized) forwards;
+            animation: cardIn 500ms 80ms var(--motion-emphasized) forwards;
         }
         @keyframes cardIn { to { opacity: 1; transform: translateY(0) scale(1); } }
 
@@ -166,7 +166,7 @@ sitemap: false
             width: 80px; height: 80px; border-radius: 20px;
             margin: 0 auto 24px; box-shadow: var(--elevation-2);
             opacity: 0; transform: scale(0.5);
-            animation: iconPop 600ms 500ms var(--motion-spring) forwards;
+            animation: iconPop 400ms 200ms var(--motion-spring) forwards;
         }
         @keyframes iconPop { to { opacity: 1; transform: scale(1); } }
 
@@ -177,7 +177,7 @@ sitemap: false
             border-radius: var(--shape-full); font-size: 0.8125rem; font-weight: 500;
             margin-bottom: 20px;
             opacity: 0; transform: translateY(10px);
-            animation: fadeUp 600ms 700ms var(--motion-emphasized) forwards;
+            animation: fadeUp 400ms 300ms var(--motion-emphasized) forwards;
         }
         .status__dot {
             width: 8px; height: 8px; border-radius: 50%;
@@ -190,7 +190,7 @@ sitemap: false
         .title {
             font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;
             margin-bottom: 10px; opacity: 0; transform: translateY(15px);
-            animation: fadeUp 700ms 800ms var(--motion-emphasized) forwards;
+            animation: fadeUp 450ms 380ms var(--motion-emphasized) forwards;
         }
         .title em {
             font-style: normal;
@@ -201,17 +201,17 @@ sitemap: false
             font-size: 1.125rem; font-weight: 600; color: var(--md-primary);
             margin-bottom: 8px; word-break: break-all;
             opacity: 0; transform: translateY(12px);
-            animation: fadeUp 600ms 900ms var(--motion-emphasized) forwards;
+            animation: fadeUp 400ms 460ms var(--motion-emphasized) forwards;
         }
         .subtitle {
             font-size: 0.9375rem; color: var(--md-on-surface-variant); line-height: 1.65;
             margin-bottom: 32px; opacity: 0; transform: translateY(12px);
-            animation: fadeUp 600ms 1000ms var(--motion-emphasized) forwards;
+            animation: fadeUp 400ms 540ms var(--motion-emphasized) forwards;
         }
 
         .spinner-wrap {
             margin-bottom: 28px; opacity: 0;
-            animation: fadeUp 500ms 1100ms var(--motion-emphasized) forwards;
+            animation: fadeUp 350ms 620ms var(--motion-emphasized) forwards;
             transform: translateY(10px);
         }
         .spinner {
@@ -224,7 +224,7 @@ sitemap: false
         .actions {
             display: flex; flex-direction: column; gap: 12px;
             opacity: 0; transform: translateY(12px);
-            animation: fadeUp 600ms 1200ms var(--motion-emphasized) forwards;
+            animation: fadeUp 400ms 700ms var(--motion-emphasized) forwards;
         }
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;

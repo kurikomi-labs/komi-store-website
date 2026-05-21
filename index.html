@@ -336,7 +336,7 @@ homepage: true
             entries.forEach(e => {
                 if (e.isIntersecting) {
                     stepsLine.classList.add('animate');
-                    steps.forEach((s, i) => setTimeout(() => s.classList.add('active'), 400 + i * 400));
+                    steps.forEach((s, i) => setTimeout(() => s.classList.add('active'), 200 + i * 220));
                     stepsObs.unobserve(e.target);
                 }
             });
@@ -351,7 +351,7 @@ homepage: true
     function animateCounters() {
         if (countersDone) return; countersDone = true;
         counters.forEach(el => {
-            const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 1800, start = performance.now();
+            const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 1100, start = performance.now();
             (function tick(now) {
                 const t = Math.min((now - start) / dur, 1);
                 el.textContent = fmtNum(Math.round((1 - Math.pow(1 - t, 3)) * target)) + suffix;
