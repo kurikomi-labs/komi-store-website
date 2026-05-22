@@ -21,7 +21,7 @@ const BLOB_RE = /^[A-Za-z0-9_-]{32,512}$/;
 
 const VERIFIER_TTL_SECONDS = 60;
 const MAX_BODY_BYTES = 2048;
-const APP_SCOPE = "repo read:user";
+const APP_SCOPE = "public_repo read:user";
 const GITHUB_AUTHORIZE_URL = "https://github.com/login/oauth/authorize";
 const CALLBACK_URL = "https://github-store.org/auth/callback";
 const USER_AGENT = "gh-store-app-oauth-worker/0.2.0";
