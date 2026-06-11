@@ -2,7 +2,7 @@
   "name": "gh-store-app-oauth",
   "version": "0.1.0",
   "private": true,
-  "description": "Cloudflare Worker handling the GitHub OAuth start/callback hop for the GitHub Store mobile app.",
+  "description": "Cloudflare Worker handling the GitHub OAuth start/callback hop for the Komi Store mobile app.",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",

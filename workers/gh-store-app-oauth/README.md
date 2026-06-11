@@ -1,7 +1,7 @@
 # gh-store-app-oauth
 
 Cloudflare Worker that runs the GitHub OAuth register/callback hop for the
-GitHub Store mobile app with full PKCE. The Jekyll site continues to serve
+Komi Store mobile app with full PKCE. The Jekyll site continues to serve
 every other path on `github-store.org`; this Worker only owns `/auth/*`.
 
 This is **separate** from the Decap CMS OAuth worker. Do not merge them — they
@@ -310,7 +310,7 @@ keeps serving everything else.
 
 ### GitHub OAuth app
 
-Before the production cutover, flip the callback URL on the `OpenHub-Store`
+Before the production cutover, flip the callback URL on the `kurikomi-labs`
 GitHub OAuth app from `githubstore://callback` to
 `https://github-store.org/auth/callback`. The client secret stays on the
 backend; this Worker never sees it.

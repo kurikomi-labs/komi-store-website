@@ -276,7 +276,7 @@ function deepLinkPage(deepLink: string, message: string): string {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Returning to GitHub Store…</title>
+<title>Returning to Komi Store…</title>
 <meta name="robots" content="noindex">
 <style>
   body { font-family: -apple-system, system-ui, sans-serif; max-width: 32rem; margin: 4rem auto; padding: 0 1rem; color: #222; }

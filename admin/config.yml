@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OpenHub-Store/openhub-store.github.io
+  repo: kurikomi-labs/komi-store-website
   branch: main
   base_url: https://github-store-cms-oauth.rainxchzed.workers.dev
 

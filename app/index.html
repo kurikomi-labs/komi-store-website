@@ -7,15 +7,15 @@ sitemap: false
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
-    <title>Opening in GitHub Store…</title>
-    <meta name="description" content="Redirecting you to GitHub Store app to view this repository.">
+    <title>Opening in Komi Store…</title>
+    <meta name="description" content="Redirecting you to Komi Store app to view this repository.">
     <meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#f4fbf7" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/OpenHub-Store/GitHub-Store/refs/heads/main/media-resources/app_icon.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kurikomi-labs/komi-store/refs/heads/main/media-resources/app_icon.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Open in GitHub Store">
-    <meta property="og:description" content="View this repository in GitHub Store — the open-source app store for GitHub releases.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/OpenHub-Store/Github-Store/refs/heads/main/media-resources/banner.jpeg">
+    <meta property="og:title" content="Open in Komi Store">
+    <meta property="og:description" content="View this repository in Komi Store — the open-source app store for GitHub releases.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/kurikomi-labs/komi-store/refs/heads/main/media-resources/banner.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -296,26 +296,26 @@ sitemap: false
     <main class="card">
         <!-- Redirecting State -->
         <div class="state active" id="stateRedirecting">
-            <img class="app-icon" src="https://raw.githubusercontent.com/OpenHub-Store/GitHub-Store/refs/heads/main/media-resources/app_icon.png" alt="GitHub Store" width="80" height="80">
+            <img class="app-icon" src="https://raw.githubusercontent.com/kurikomi-labs/komi-store/refs/heads/main/media-resources/app_icon.png" alt="Komi Store" width="80" height="80">
             <div class="status">
                 <span class="status__dot"></span>
                 Redirecting…
             </div>
-            <h1 class="title">Opening in <em>GitHub Store</em></h1>
+            <h1 class="title">Opening in <em>Komi Store</em></h1>
             <p class="repo-name" id="repoDisplay"></p>
             <p class="subtitle">You'll be redirected to the app in a moment. If nothing happens, use the buttons below.</p>
             <div class="spinner-wrap"><div class="spinner"></div></div>
             <div class="actions">
                 <a class="btn btn--filled" id="openAppBtn" href="#">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                    Open in GitHub Store
+                    Open in Komi Store
                 </a>
                 <div class="btn-row">
                     <a class="btn btn--tonal" id="githubBtn" href="#" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
                         View on GitHub
                     </a>
-                    <a class="btn btn--outlined" href="https://github.com/OpenHub-Store/GitHub-Store/releases/latest" target="_blank" rel="noopener">
+                    <a class="btn btn--outlined" href="https://github.com/kurikomi-labs/komi-store/releases/latest" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
                         Get the App
                     </a>
@@ -341,8 +341,8 @@ sitemap: false
 
     <div class="footer">
         <a href="https://github-store.org">
-            <img src="https://raw.githubusercontent.com/OpenHub-Store/GitHub-Store/refs/heads/main/media-resources/app_icon.png" alt="" width="20" height="20">
-            GitHub Store
+            <img src="https://raw.githubusercontent.com/kurikomi-labs/komi-store/refs/heads/main/media-resources/app_icon.png" alt="" width="20" height="20">
+            Komi Store
         </a>
     </div>
 
@@ -373,7 +373,7 @@ sitemap: false
         const customSchemeUri = 'githubstore://repo/' + owner + '/' + repoName;
         const intentUri = 'intent://repo/' + owner + '/' + repoName
             + '#Intent;scheme=githubstore;package=zed.rainxch.githubstore;'
-            + 'S.browser_fallback_url=' + encodeURIComponent('https://github.com/OpenHub-Store/GitHub-Store/releases/latest')
+            + 'S.browser_fallback_url=' + encodeURIComponent('https://github.com/kurikomi-labs/komi-store/releases/latest')
             + ';end';
 
         // Detect platform (MUST be before we use isAndroid)
@@ -384,7 +384,7 @@ sitemap: false
 
         // Set up UI
         repoDisplay.textContent = owner + '/' + repoName;
-        document.title = 'Opening ' + owner + '/' + repoName + ' — GitHub Store';
+        document.title = 'Opening ' + owner + '/' + repoName + ' — Komi Store';
         openAppBtn.href = openUri;
         githubBtn.href = githubUrl;
 

@@ -1,7 +1,7 @@
 {%- comment -%} SEO + meta head — single source of truth.
 
 Front-matter knobs per page:
-  title          → "<title> — GitHub Store" suffix appended
+  title          → "<title> — Komi Store" suffix appended
   title_full     → overrides page.title; used verbatim, no suffix
   description    → meta description (falls back to site.description)
   keywords       → comma-separated meta keywords
@@ -14,7 +14,7 @@ Front-matter knobs per page:
 {%- if page.title_full -%}
   {%- assign page_title = page.title_full -%}
 {%- elsif page.title -%}
-  {%- assign page_title = page.title | append: " — GitHub Store" -%}
+  {%- assign page_title = page.title | append: " — Komi Store" -%}
 {%- else -%}
   {%- assign page_title = site.title -%}
 {%- endif -%}
@@ -29,7 +29,7 @@ Front-matter knobs per page:
   {%- assign og_desc_enc = page_description | url_encode -%}
   {%- capture og_image -%}https://github-store-cms-oauth.rainxchzed.workers.dev/og?title={{ og_title_enc }}&description={{ og_desc_enc }}{%- endcapture -%}
 {%- else -%}
-  {%- assign og_image = "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/refs/heads/main/media-resources/banner.jpeg" -%}
+  {%- assign og_image = "https://raw.githubusercontent.com/kurikomi-labs/komi-store/refs/heads/main/media-resources/banner.jpeg" -%}
 {%- endif -%}
 
 <meta charset="UTF-8">
@@ -70,7 +70,7 @@ Front-matter knobs per page:
 <meta property="og:image" content="{{ og_image }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="GitHub Store">
+<meta property="og:site_name" content="Komi Store">
 <meta property="og:locale" content="{{ page.lang | default: site.locale | default: 'en_US' }}">
 {%- if page.layout == 'news_post' %}
 <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
@@ -106,19 +106,19 @@ Front-matter knobs per page:
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"></noscript>
 
-<link rel="alternate" type="application/rss+xml" title="GitHub Store Blog" href="/blog/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Komi Store Blog" href="/blog/feed.xml">
 
 <!-- Organization (site-wide) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "GitHub Store",
-  "alternateName": "OpenHub-Store",
+  "name": "Kurikomi Labs",
+  "alternateName": ["Komi Store", "GitHub Store", "OpenHub-Store"],
   "url": "{{ site.url }}",
   "logo": "{{ site.url }}/android-chrome-512x512.png",
   "sameAs": [
-    "https://github.com/OpenHub-Store",
+    "https://github.com/kurikomi-labs",
     "https://twitter.com/{{ site.social.twitter }}"
   ]
 }
@@ -158,8 +158,8 @@ Front-matter knobs per page:
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "GitHub Store",
-  "alternateName": "GitHub-Store",
+  "name": "Komi Store",
+  "alternateName": ["GitHub Store", "Komi-Store", "GitHub-Store"],
   "operatingSystem": "Android, Windows, macOS, Linux",
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "PackageManager",
@@ -168,14 +168,14 @@ Front-matter knobs per page:
     "price": "0",
     "priceCurrency": "USD"
   },
-  "downloadUrl": "https://github.com/OpenHub-Store/GitHub-Store/releases",
+  "downloadUrl": "https://github.com/kurikomi-labs/komi-store/releases",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "url": "{{ site.url }}",
   "image": "{{ site.url }}/android-chrome-512x512.png",
   "screenshot": [
-    "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/01.jpg",
-    "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/02.jpg",
-    "https://raw.githubusercontent.com/OpenHub-Store/Github-Store/main/media-resources/screenshots/mobile/03.jpg"
+    "https://raw.githubusercontent.com/kurikomi-labs/komi-store/main/media-resources/screenshots/mobile/01.jpg",
+    "https://raw.githubusercontent.com/kurikomi-labs/komi-store/main/media-resources/screenshots/mobile/02.jpg",
+    "https://raw.githubusercontent.com/kurikomi-labs/komi-store/main/media-resources/screenshots/mobile/03.jpg"
   ],
   "author": {
     "@type": "Person",
@@ -184,8 +184,8 @@ Front-matter knobs per page:
   },
   "publisher": {
     "@type": "Organization",
-    "name": "OpenHub-Store",
-    "url": "https://github.com/OpenHub-Store"
+    "name": "Kurikomi Labs",
+    "url": "https://github.com/kurikomi-labs"
   },
   "datePublished": "2025-11-15",
   "inLanguage": ["en", "ar", "bn", "zh-Hans", "es", "fr", "hi", "it", "ja", "ko", "pl", "ru", "tr"]
@@ -200,15 +200,15 @@ Front-matter knobs per page:
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is GitHub Store?",
+      "name": "What is Komi Store?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GitHub Store is a free, open-source app store for GitHub releases. It works on Android, Windows, macOS, and Linux. License: Apache-2.0."
+        "text": "Komi Store is a free, open-source app store for GitHub releases. It works on Android, Windows, macOS, and Linux. License: Apache-2.0."
       }
     },
     {
       "@type": "Question",
-      "name": "Is GitHub Store free?",
+      "name": "Is Komi Store free?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. The app, the source code, and the backend are all open source under Apache 2.0."
@@ -216,7 +216,7 @@ Front-matter knobs per page:
     },
     {
       "@type": "Question",
-      "name": "Which platforms does GitHub Store support?",
+      "name": "Which platforms does Komi Store support?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Android, Windows, macOS, and Linux. The codebase is shared across all four via Kotlin Multiplatform and Compose Multiplatform."
@@ -224,15 +224,15 @@ Front-matter knobs per page:
     },
     {
       "@type": "Question",
-      "name": "How does GitHub Store keep installs current?",
+      "name": "How does Komi Store keep installs current?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GitHub Store remembers what you installed and surfaces new releases automatically. On Android you can opt in to silent updates via Shizuku, Sui, or Dhizuku. Auto-update verifies the signing fingerprint matches the originally-installed key before applying any update."
+        "text": "Komi Store remembers what you installed and surfaces new releases automatically. On Android you can opt in to silent updates via Shizuku, Sui, or Dhizuku. Auto-update verifies the signing fingerprint matches the originally-installed key before applying any update."
       }
     },
     {
       "@type": "Question",
-      "name": "Does GitHub Store work in China?",
+      "name": "Does Komi Store work in China?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. The mirror system and backend OAuth proxy work around GitHub throttling on Chinese networks."
@@ -261,7 +261,7 @@ Front-matter knobs per page:
   },
   "publisher": {
     "@type": "Organization",
-    "name": "GitHub Store",
+    "name": "Komi Store",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.url }}/android-chrome-512x512.png"
