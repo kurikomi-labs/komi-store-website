@@ -1,14 +1,12 @@
 # Komi Store
 
-> Free, open-source app store for GitHub releases. Cross-platform (Android, Windows, macOS, Linux). Apache-2.0. Built by Usmon Narzullayev with Kotlin Multiplatform + Compose Multiplatform. Discovery, silent install, signing-key verification, and a multi-source mirror system for restricted networks.
+> Free, open-source app store for GitHub releases. Cross-platform (Android, Windows, macOS, Linux). Apache-2.0. Built by Kurikomi with Kotlin Multiplatform + Compose Multiplatform. Discovery, silent install, signing-key verification, and a multi-source mirror system for restricted networks.
 
 ## Core pages
 
-- [Homepage](https://github-store.org/): What Komi Store is, who uses it, FAQ, About panel.
+- [Homepage](https://github-store.org/): What Komi Store is, the core features, and how it works.
 - [Download](https://github-store.org/download/): Per-platform install methods. Android (APK direct, F-Droid, Obtainium). Windows (EXE, MSI, portable ZIP, Scoop, Winget). macOS (DMG arm64/x64, PKG). Linux (AppImage, DEB, pacman; RPM temporarily paused). SHA-256 signing fingerprint for verification.
-- [Features](https://github-store.org/features/): Full feature catalog. Discovery, release browser, mirror system, rich details, app management (Library Imports, Obtainium import/export, Shizuku/Sui/Dhizuku silent install), collections, announcements feed, authentication, tweaks, localization (13 languages), network & performance.
-- [Press](https://github-store.org/press/): Boilerplate (1-sentence / 1-paragraph / 3-paragraph). Brand assets, color palette, screenshots, founder bio, "Featured in" list, quick facts table, press contact.
-- [Sponsors](https://github-store.org/sponsors/): Donation rails (GitHub Sponsors, Buy Me a Coffee, Liberapay, Ko-fi). Tier ladder ($3/$10/$25 per month). Where the money goes (infra/certs/translation). Sponsor wall + FAQ.
+- [Features](https://github-store.org/features/): Full feature catalog. Discovery, release browser, mirror system, rich details, app management (Library Imports, Obtainium import/export, Shizuku/Sui/Dhizuku silent install), collections, announcements feed, authentication, tweaks, localization (13 languages), network & performance. Listing requirements.
 - [Privacy Policy](https://github-store.org/privacy-policy/): Privacy-first explainer. No personal data collected by default. Optional anonymous analytics opt-in. Newsletter handled by Buttondown, separate from app.
 
 ## Blog
@@ -27,4 +25,3 @@
 
 - [Sitemap (XML)](https://github-store.org/sitemap.xml): Machine-readable URL list.
 - [robots.txt](https://github-store.org/robots.txt): Crawler directives.
-- [Founder GitHub profile](https://github.com/rainxchzed): Project author Usmon Narzullayev (@rainxchzed).
