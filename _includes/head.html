@@ -6,7 +6,7 @@ Front-matter knobs per page:
   description    → meta description (falls back to site.description)
   keywords       → comma-separated meta keywords
   image          → absolute OG/Twitter image URL (overrides default)
-  homepage       → emits SoftwareApplication + FAQPage JSON-LD
+  homepage       → emits SoftwareApplication JSON-LD
   noindex        → emits <meta name="robots" content="noindex,nofollow">
   lang           → <html lang="..."> override (default "en")
 {%- endcomment -%}
@@ -51,8 +51,8 @@ Front-matter knobs per page:
 <meta name="msvalidate.01" content="{{ site.bing_site_verification }}">
 {%- endif %}
 
-<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f4fbf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0a07" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f1eadc" media="(prefers-color-scheme: light)">
 
 <!-- Favicons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -103,8 +103,8 @@ Front-matter knobs per page:
 <!-- Fonts (async, non-render-blocking, font-display:swap handles FOUT) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
 
 <link rel="alternate" type="application/rss+xml" title="Komi Store Blog" href="/blog/feed.xml">
 
@@ -113,7 +113,7 @@ Front-matter knobs per page:
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Kurikomi Labs",
+  "name": "Kurikomi",
   "alternateName": ["Komi Store", "GitHub Store", "OpenHub-Store"],
   "url": "{{ site.url }}",
   "logo": "{{ site.url }}/android-chrome-512x512.png",
@@ -184,7 +184,7 @@ Front-matter knobs per page:
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Kurikomi Labs",
+    "name": "Kurikomi",
     "url": "https://github.com/kurikomi-labs"
   },
   "datePublished": "2025-11-15",
@@ -192,55 +192,6 @@ Front-matter knobs per page:
 }
 </script>
 
-<!-- FAQ (homepage) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Komi Store?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Komi Store is a free, open-source app store for GitHub releases. It works on Android, Windows, macOS, and Linux. License: Apache-2.0."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Komi Store free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The app, the source code, and the backend are all open source under Apache 2.0."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which platforms does Komi Store support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Android, Windows, macOS, and Linux. The codebase is shared across all four via Kotlin Multiplatform and Compose Multiplatform."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Komi Store keep installs current?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Komi Store remembers what you installed and surfaces new releases automatically. On Android you can opt in to silent updates via Shizuku, Sui, or Dhizuku. Auto-update verifies the signing fingerprint matches the originally-installed key before applying any update."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Komi Store work in China?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The mirror system and backend OAuth proxy work around GitHub throttling on Chinese networks."
-      }
-    }
-  ]
-}
-</script>
 {%- endif %}
 
 {%- if page.layout == 'news_post' %}

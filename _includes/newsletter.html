@@ -25,7 +25,7 @@ Renders nothing when site.buttondown_username is empty.
 <form class="newsletter newsletter--{{ nl_variant }}" action="https://buttondown.com/api/emails/embed-subscribe/{{ site.buttondown_username }}" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/{{ site.buttondown_username }}', 'popupwindow');">
     <div class="newsletter__head">
         <h3 class="newsletter__title">{{ nl_title }}</h3>
-        <p class="newsletter__sub">{{ nl_sub }}</p>
+        {%- unless include.no_subtitle %}<p class="newsletter__sub">{{ nl_sub }}</p>{% endunless -%}
     </div>
     <div class="newsletter__field">
         <label for="bd-email-{{ nl_id }}" class="sr-only">Email address</label>

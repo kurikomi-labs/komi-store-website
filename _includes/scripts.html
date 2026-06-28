@@ -3,10 +3,11 @@
     /* ─── Theme Toggle ─── */
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const cycle = ['auto', 'light', 'dark'];
+    const cycle = ['light', 'dark'];
     let idx = 0;
     const saved = localStorage.getItem('gs-theme');
-    if (saved && cycle.includes(saved)) { idx = cycle.indexOf(saved); html.dataset.theme = saved; }
+    if (saved === 'light' || saved === 'dark') { idx = cycle.indexOf(saved); html.dataset.theme = saved; }
+    else { html.dataset.theme = 'light'; }
     syncIcon();
     if (toggle) {
         toggle.addEventListener('click', () => {
@@ -18,7 +19,7 @@
     }
     function syncIcon() {
         if (!toggle) return;
-        const map = { auto: 'auto', light: 'sun', dark: 'moon' };
+        const map = { light: 'sun', dark: 'moon' };
         toggle.dataset.active = map[cycle[idx]];
         toggle.title = `Theme: ${cycle[idx]}`;
     }

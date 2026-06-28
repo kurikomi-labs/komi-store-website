@@ -12,10 +12,29 @@
             <span class="announce-bar__cta__label">Read why</span>
             <span class="announce-bar__cta__arrow" aria-hidden="true">→</span>
         </a>
+        <button class="announce-bar__close" id="announceClose" type="button" aria-label="Dismiss announcement">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
     </div>
 </aside>
 <script>
 (function() {
+    var bar = document.getElementById('announceBar');
+    var body = document.body;
+    var KEY = 'kao-dismissed';
+    if (bar && localStorage.getItem(KEY) === '1') {
+        bar.remove();
+        body.classList.remove('has-announce');
+        return;
+    }
+    var closeBtn = document.getElementById('announceClose');
+    if (closeBtn && bar) {
+        closeBtn.addEventListener('click', function() {
+            localStorage.setItem(KEY, '1');
+            bar.remove();
+            body.classList.remove('has-announce');
+        });
+    }
     var el = document.getElementById('kaoCountdown');
     if (!el) return;
     var target = new Date(el.dataset.target).getTime();
